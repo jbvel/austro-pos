@@ -15,6 +15,7 @@ Ejemplo:
 ```text
 src/modules/
 ├── pos/
+├── suppliers/
 ├── products/
 ├── sales/
 ├── inventory/
@@ -141,7 +142,149 @@ Cada módulo debe respetar:
 
 No crear diseños visuales distintos para cada módulo.
 
-## 9. Reglas técnicas
+## 9. Proveedores como módulo de negocio
+
+`Proveedores` debe tratarse como módulo principal del sistema, no como mantenedor.
+
+Ruta futura sugerida:
+
+`/suppliers`
+
+Ubicación futura:
+
+`src/modules/suppliers/`
+
+Justificación:
+
+- una compra pertenece a un proveedor
+- un proveedor puede tener muchas compras
+- una compra tiene muchos productos
+- una compra puede aumentar stock
+- un producto puede tener un proveedor principal inicialmente
+- más adelante un producto podría tener múltiples proveedores
+
+Alcance esperado del módulo Proveedores:
+
+- listar proveedores
+- crear proveedor
+- editar proveedor
+- activar/desactivar proveedor
+- eliminar proveedor solo si no tiene historial
+- ver datos comerciales
+- ver historial de compras
+- relacionar proveedor con compras y abastecimiento
+
+Campos futuros de proveedor:
+
+- `id`
+- `name`
+- `rut`
+- `business_name`
+- `giro`
+- `contact_name`
+- `phone`
+- `email`
+- `address`
+- `commune`
+- `city`
+- `is_active`
+- `created_at`
+- `updated_at`
+
+No implementar todavía `Proveedores` ni la ruta `/suppliers` hasta que se indique.
+
+## 10. Regla de tablas DataTable
+
+Todas las tablas principales del sistema deben usar un componente reutilizable tipo `DataTable`.
+
+Aplicará para:
+
+- Productos
+- Ventas
+- Inventario
+- Clientes
+- Caja
+- Reportes
+- Configuración
+
+La `DataTable` debe quedar preparada para funcionalidades útiles en administración.
+
+Funciones esperadas:
+
+- columnas configurables
+- búsqueda global
+- filtros por columna
+- ordenamiento por columna
+- paginación
+- selector de cantidad de filas por página
+- exportar a Excel
+- exportar a CSV si es simple de agregar
+- mostrar/ocultar columnas
+- acciones por fila
+- estados visuales
+- mensaje cuando no hay datos
+- loading state
+- responsive básico
+- modo claro/oscuro
+- textos en español chileno
+
+`DataTable` debe vivir en:
+
+`src/components/shared/DataTable.tsx`
+
+Reglas:
+
+- No duplicar tablas por módulo.
+- No crear tablas HTML independientes si se puede usar `DataTable`.
+- La lógica específica de cada módulo debe quedar fuera de `DataTable`.
+- `DataTable` no debe conocer productos, ventas ni clientes.
+- Las columnas deben ser configurables.
+- Las acciones por fila deben venir desde el módulo.
+- Los filtros específicos pueden ser configurados desde el módulo.
+- La exportación debe usar los datos visibles o filtrados según se defina.
+- Si una celda es específica del módulo, puede vivir dentro del módulo.
+- No conectar backend todavía.
+- No tocar Laravel.
+
+Para el Módulo Productos:
+
+- `ProductTable` debe usar `DataTable` internamente.
+
+## 11. Propuesta de agrupación futura del menú
+
+Principal:
+
+- Dashboard
+- POS
+
+Gestión:
+
+- Productos
+- Clientes
+- Proveedores
+
+Operación:
+
+- Ventas
+- Compras
+- Inventario
+- Caja
+
+Mantenedores:
+
+- Categorías
+- Marcas
+- Unidades de medida
+- Bodegas / sucursales
+
+Sistema:
+
+- Reportes
+- Configuración
+
+Esta agrupación es una guía arquitectónica futura. No implica cambiar el sidebar actual todavía.
+
+## 12. Reglas técnicas
 
 - Usar TypeScript.
 - Evitar archivos gigantes.
@@ -153,7 +296,7 @@ No crear diseños visuales distintos para cada módulo.
 - Mantener textos en español.
 - Mantener tildes correctamente.
 
-## 10. Orden de desarrollo recomendado
+## 13. Orden de desarrollo recomendado
 
 1. POS
 2. Productos

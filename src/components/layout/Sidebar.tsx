@@ -7,6 +7,7 @@ import {
   ClipboardList,
   CreditCard,
   LayoutDashboard,
+  ListTree,
   PanelLeftClose,
   PanelLeftOpen,
   Package,
@@ -39,7 +40,7 @@ const navigationItems = [
     label: "Productos",
     href: "/products",
     icon: Package,
-    enabled: false,
+    enabled: true,
   },
   {
     label: "Ventas",
@@ -76,6 +77,15 @@ const navigationItems = [
     href: "/settings",
     icon: Settings,
     enabled: false,
+  },
+];
+
+const maintainerItems = [
+  {
+    label: "Categorías",
+    href: "/maintainers/categories",
+    icon: ListTree,
+    enabled: true,
   },
 ];
 
@@ -195,6 +205,40 @@ export function Sidebar({
                 }
               />
             ))}
+
+            <div
+              className={`pt-4 ${collapsed ? "space-y-2" : "space-y-3"}`}
+            >
+              <div
+                className={`flex items-center px-2 ${
+                  collapsed ? "justify-center" : "justify-between"
+                }`}
+              >
+                {!collapsed ? (
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+                    Mantenedores
+                  </p>
+                ) : null}
+                <ListTree className="size-4 text-slate-500 dark:text-slate-400" />
+              </div>
+
+              <div className="space-y-1.5">
+                {maintainerItems.map((item) => (
+                  <NavItem
+                    key={item.label}
+                    label={item.label}
+                    href={item.href}
+                    icon={item.icon}
+                    enabled={item.enabled}
+                    collapsed={collapsed}
+                    isActive={
+                      pathname === item.href ||
+                      pathname.startsWith(`${item.href}/`)
+                    }
+                  />
+                ))}
+              </div>
+            </div>
           </nav>
 
           <div className="mt-7 rounded-2xl bg-slate-100/90 p-4 dark:border dark:border-slate-700/60 dark:bg-slate-900/60">

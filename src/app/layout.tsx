@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, IBM_Plex_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -38,7 +40,18 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <TooltipProvider>
+            {children}
+            <Toaster
+              position="bottom-right"
+              expand={false}
+              richColors
+              closeButton
+              visibleToasts={4}
+            />
+          </TooltipProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

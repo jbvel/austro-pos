@@ -1,0 +1,68 @@
+import type { Category } from "@/modules/categories/types/category";
+
+export const mockCategories: Category[] = [
+  {
+    id: 1,
+    name: "Abarrotes",
+    description: "Productos de consumo frecuente y despensa.",
+    is_active: true,
+    created_at: "2026-01-05T09:00:00.000Z",
+    updated_at: "2026-06-20T10:00:00.000Z",
+  },
+  {
+    id: 2,
+    name: "Bebidas",
+    description: "Bebidas frías, gaseosas, aguas y jugos.",
+    is_active: true,
+    created_at: "2026-01-05T09:10:00.000Z",
+    updated_at: "2026-06-20T10:05:00.000Z",
+  },
+  {
+    id: 3,
+    name: "Panadería",
+    description: "Productos frescos de panadería y masas.",
+    is_active: true,
+    created_at: "2026-01-05T09:20:00.000Z",
+    updated_at: "2026-06-20T10:10:00.000Z",
+  },
+  {
+    id: 4,
+    name: "Lácteos",
+    description: "Leches, quesos, yogures y derivados.",
+    is_active: true,
+    created_at: "2026-01-05T09:30:00.000Z",
+    updated_at: "2026-06-20T10:15:00.000Z",
+  },
+  {
+    id: 5,
+    name: "Limpieza",
+    description: "Artículos de aseo y limpieza del hogar.",
+    is_active: true,
+    created_at: "2026-01-05T09:40:00.000Z",
+    updated_at: "2026-06-20T10:20:00.000Z",
+  },
+  {
+    id: 6,
+    name: "Hogar",
+    description: "Productos de uso diario para el hogar.",
+    is_active: true,
+    created_at: "2026-01-05T09:50:00.000Z",
+    updated_at: "2026-06-20T10:25:00.000Z",
+  },
+  {
+    id: 7,
+    name: "Higiene",
+    description: "Artículos de higiene y cuidado personal.",
+    is_active: true,
+    created_at: "2026-01-05T10:00:00.000Z",
+    updated_at: "2026-06-20T10:30:00.000Z",
+  },
+  {
+    id: 8,
+    name: "Prueba",
+    description: "Categoría de prueba para registros no productivos.",
+    is_active: false,
+    created_at: "2026-01-05T10:10:00.000Z",
+    updated_at: "2026-06-20T10:35:00.000Z",
+  },
+];

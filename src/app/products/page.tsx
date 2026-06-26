@@ -1,10 +1,5 @@
-import { ModulePlaceholder } from "@/components/layout/ModulePlaceholder";
+import { ProductsPage as ProductsModulePage } from "@/modules/products/components/ProductsPage";
 
 export default function ProductsPage() {
-  return (
-    <ModulePlaceholder
-      title="Productos"
-      description="Gestión de productos, precios, códigos y categorías."
-    />
-  );
+  return <ProductsModulePage />;
 }
