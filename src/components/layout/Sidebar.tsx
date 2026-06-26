@@ -72,7 +72,7 @@ const navigationItems = [
     enabled: false,
   },
   {
-    label: "Configuracion",
+    label: "Configuración",
     href: "/settings",
     icon: Settings,
     enabled: false,
@@ -109,7 +109,7 @@ export function Sidebar({
         onClick={onCloseMobile}
       />
       <aside
-        className={`fixed inset-y-3 left-3 z-50 flex w-[min(22rem,calc(100vw-1.5rem))] flex-col rounded-[28px] border border-white/70 bg-white/92 p-5 shadow-[0_20px_60px_-36px_rgba(93,135,255,0.45)] backdrop-blur transition-transform duration-200 dark:border-white/8 dark:bg-[color-mix(in_oklch,var(--card)_96%,#05080e)] dark:shadow-[0_10px_24px_-20px_rgba(0,0,0,0.82)] lg:sticky lg:top-4 lg:z-auto lg:h-[calc(100vh-2rem)] lg:flex-none ${
+        className={`fixed inset-y-3 left-3 z-50 flex w-[min(22rem,calc(100vw-1.5rem))] flex-col rounded-[28px] border border-white/70 bg-white/92 p-5 shadow-[0_20px_60px_-36px_rgba(93,135,255,0.45)] backdrop-blur transition-transform duration-200 dark:border-slate-700/70 dark:bg-[color-mix(in_oklch,var(--card)_98%,#04070d)] dark:shadow-[0_10px_24px_-20px_rgba(0,0,0,0.82)] lg:sticky lg:top-4 lg:z-auto lg:h-[calc(100vh-2rem)] lg:flex-none ${
           mobileOpen ? "translate-x-0" : "-translate-x-[110%]"
         } ${collapsed ? "lg:w-[96px] xl:w-[104px]" : "lg:w-[292px] xl:w-[308px]"} lg:translate-x-0`}
       >
@@ -175,7 +175,7 @@ export function Sidebar({
           >
             {!collapsed ? (
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-                Navegacion
+                Navegación
               </p>
             ) : null}
             <ClipboardList className="size-4 text-slate-500 dark:text-slate-400" />
@@ -197,7 +197,7 @@ export function Sidebar({
             ))}
           </nav>
 
-          <div className="mt-6 rounded-2xl bg-slate-100/90 p-4 dark:bg-white/[0.04]">
+          <div className="mt-7 rounded-2xl bg-slate-100/90 p-4 dark:border dark:border-slate-700/60 dark:bg-slate-900/60">
             {!collapsed ? (
               <>
                 <p className="text-sm font-semibold text-slate-950 dark:text-white">
@@ -216,10 +216,10 @@ export function Sidebar({
                   collapsed ? "" : "w-full"
                 }`}
                 onClick={handleLogout}
-                aria-label="Cerrar sesion"
-                title="Cerrar sesion"
+                aria-label="Cerrar sesión"
+                title="Cerrar sesión"
               >
-                {collapsed ? <X className="size-4" /> : "Cerrar sesion"}
+                {collapsed ? <X className="size-4" /> : "Cerrar sesión"}
               </Button>
             </div>
             {collapsed ? (

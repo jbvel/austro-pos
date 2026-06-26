@@ -46,7 +46,7 @@ export function LoginForm() {
       router.push("/dashboard");
     } catch (error) {
       setGeneralError(
-        error instanceof Error ? error.message : "No fue posible iniciar sesion",
+        error instanceof Error ? error.message : "No fue posible iniciar sesión",
       );
     }
   });

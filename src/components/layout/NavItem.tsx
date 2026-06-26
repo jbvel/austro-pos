@@ -28,7 +28,7 @@ export function NavItem({
             ? "justify-center"
             : "items-center justify-between"
         }`}
-        title={`${label} - Pronto`}
+        title={`${label} - PRONTO`}
       >
         <div className={`flex items-center ${collapsed ? "" : "gap-3"}`}>
           <Icon className="size-4" />
@@ -36,7 +36,7 @@ export function NavItem({
         </div>
         {!collapsed ? (
           <span className="rounded-full bg-slate-200/80 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-600 dark:bg-white/10 dark:text-slate-300">
-            Pronto
+            PRONTO
           </span>
         ) : null}
       </div>
