@@ -1,10 +1,5 @@
-import { ModulePlaceholder } from "@/components/layout/ModulePlaceholder";
+import { PosPage as PosModulePage } from "@/modules/pos/components/PosPage";
 
 export default function PosPage() {
-  return (
-    <ModulePlaceholder
-      title="POS"
-      description="Punto de venta para registrar ventas de forma rápida."
-    />
-  );
+  return <PosModulePage />;
 }

@@ -33,7 +33,7 @@ const navigationItems = [
     label: "POS",
     href: "/pos",
     icon: ShoppingCart,
-    enabled: false,
+    enabled: true,
   },
   {
     label: "Productos",
