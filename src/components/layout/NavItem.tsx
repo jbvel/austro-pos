@@ -10,6 +10,7 @@ type NavItemProps = {
   isActive: boolean;
   enabled?: boolean;
   collapsed?: boolean;
+  onClick?: () => void;
 };
 
 export function NavItem({
@@ -19,6 +20,7 @@ export function NavItem({
   isActive,
   enabled = true,
   collapsed = false,
+  onClick,
 }: NavItemProps) {
   if (!enabled) {
     return (
@@ -46,6 +48,7 @@ export function NavItem({
   return (
     <Link
       href={href}
+      onClick={onClick}
       className={`flex rounded-2xl px-3 py-3 text-sm font-medium transition-colors ${
         isActive
           ? "bg-[linear-gradient(135deg,#5d87ff_0%,#49beff_100%)] text-white shadow-lg shadow-sky-200/80 dark:shadow-none dark:brightness-95"

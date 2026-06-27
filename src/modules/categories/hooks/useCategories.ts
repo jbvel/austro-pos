@@ -15,6 +15,28 @@ function normalizeText(value: string) {
   return value.trim().toLowerCase();
 }
 
+function ensureUniqueCategoryIds(categories: Category[]) {
+  const seenIds = new Set<number>();
+  let nextId =
+    categories.reduce((maxId, category) => Math.max(maxId, category.id), 0) + 1;
+
+  return categories.map((category) => {
+    if (!Number.isInteger(category.id) || seenIds.has(category.id)) {
+      const normalizedCategory = {
+        ...category,
+        id: nextId,
+      };
+
+      seenIds.add(nextId);
+      nextId += 1;
+      return normalizedCategory;
+    }
+
+    seenIds.add(category.id);
+    return category;
+  });
+}
+
 function readStoredCategories() {
   if (typeof window === "undefined") {
     return mockCategories;
@@ -28,7 +50,21 @@ function readStoredCategories() {
 
   try {
     const parsedValue = JSON.parse(rawValue) as Category[];
-    return Array.isArray(parsedValue) ? parsedValue : mockCategories;
+
+    if (!Array.isArray(parsedValue)) {
+      return mockCategories;
+    }
+
+    const normalizedCategories = ensureUniqueCategoryIds(parsedValue);
+
+    if (JSON.stringify(normalizedCategories) !== JSON.stringify(parsedValue)) {
+      window.localStorage.setItem(
+        CATEGORY_STORAGE_KEY,
+        JSON.stringify(normalizedCategories),
+      );
+    }
+
+    return normalizedCategories;
   } catch {
     return mockCategories;
   }
@@ -117,23 +153,33 @@ export function useCategories() {
     }
 
     const timestamp = new Date().toISOString();
-    const newCategory: Category = {
-      id:
-        categories.length > 0
-          ? Math.max(...categories.map((item) => item.id)) + 1
-          : 1,
-      name: values.name.trim(),
-      description: values.description?.trim() || "",
-      is_active: values.is_active,
-      created_at: timestamp,
-      updated_at: timestamp,
-    };
+    let newCategory: Category | null = null;
 
     setCategories((currentCategories) => {
+      const nextCategoryId =
+        currentCategories.length > 0
+          ? Math.max(...currentCategories.map((item) => item.id)) + 1
+          : 1;
+
+      newCategory = {
+        id: nextCategoryId,
+        name: values.name.trim(),
+        description: values.description?.trim() || "",
+        is_active: values.is_active,
+        created_at: timestamp,
+        updated_at: timestamp,
+      };
+
       const nextCategories = [...currentCategories, newCategory];
       persistCategories(nextCategories);
       return nextCategories;
     });
+
+    if (!newCategory) {
+      setError("No se pudo crear la categoría.");
+      return;
+    }
+
     setSelectedCategory(newCategory);
     setIsFormOpen(false);
     setSuccessMessage("Categoría creada correctamente.");

@@ -110,7 +110,6 @@ export function ProductTable({
       key: "status",
       header: "Estado",
       sortable: true,
-      filterable: true,
       render: (product) => <ProductStatusBadge product={product} />,
       accessor: (product) => getProductStatusLabel(getProductStatus(product)),
       searchValue: (product) => getProductStatusLabel(getProductStatus(product)),

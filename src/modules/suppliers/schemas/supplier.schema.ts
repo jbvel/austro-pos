@@ -1,14 +1,7 @@
 import { z } from "zod";
 
 function optionalTrimmedString() {
-  return z.preprocess((value) => {
-    if (typeof value !== "string") {
-      return value;
-    }
-
-    const trimmedValue = value.trim();
-    return trimmedValue === "" ? undefined : trimmedValue;
-  }, z.string().optional());
+  return z.string().trim().optional().transform((value) => value || undefined);
 }
 
 export const supplierSchema = z.object({
@@ -21,14 +14,15 @@ export const supplierSchema = z.object({
   giro: optionalTrimmedString(),
   contact_name: optionalTrimmedString(),
   phone: optionalTrimmedString(),
-  email: z.preprocess((value) => {
-    if (typeof value !== "string") {
-      return value;
-    }
-
-    const trimmedValue = value.trim();
-    return trimmedValue === "" ? undefined : trimmedValue;
-  }, z.string().email("El correo no tiene un formato válido.").optional()),
+  email: z
+    .string()
+    .trim()
+    .optional()
+    .refine(
+      (value) => !value || z.string().email().safeParse(value).success,
+      "El correo no tiene un formato válido.",
+    )
+    .transform((value) => value || undefined),
   address: optionalTrimmedString(),
   commune: optionalTrimmedString(),
   city: optionalTrimmedString(),
