@@ -28,7 +28,7 @@ export function ModulePlaceholder({
         action={
           <Button
             variant="secondary"
-            className="bg-white text-sky-700 hover:bg-sky-50 dark:bg-white/8 dark:text-white/90 dark:hover:bg-white/14"
+            className="bg-white text-primary hover:bg-primary/8 dark:bg-white/8 dark:text-white/90 dark:hover:bg-white/14"
           >
             {statusLabel}
           </Button>
@@ -36,9 +36,9 @@ export function ModulePlaceholder({
       />
 
       <section className="grid gap-4 xl:grid-cols-[1.65fr_1fr]">
-        <Card className="border border-sky-100/70 bg-white/95 shadow-sm shadow-sky-100/60 dark:border-sky-400/12 dark:bg-[color-mix(in_oklch,var(--card)_90%,#0b1220)] dark:shadow-[0_10px_26px_-18px_rgba(0,0,0,0.6)]">
+        <Card className="border border-primary/12 bg-white/95 shadow-sm shadow-[0_10px_24px_-18px_var(--brand-shadow-soft)] dark:border-primary/12 dark:bg-[color-mix(in_oklch,var(--card)_90%,#0b1220)] dark:shadow-[0_10px_26px_-18px_rgba(0,0,0,0.6)]">
           <CardHeader className="space-y-2">
-            <CardDescription className="text-sm uppercase tracking-[0.16em] text-sky-700 dark:text-sky-300/85">
+            <CardDescription className="text-sm uppercase tracking-[0.16em] text-primary/90 dark:text-primary/85">
               Estado del módulo
             </CardDescription>
             <CardTitle className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
@@ -52,7 +52,7 @@ export function ModulePlaceholder({
               etapa de desarrollo.
             </p>
             <div className="grid gap-4 md:grid-cols-3">
-              <div className="rounded-2xl bg-slate-50 p-4 dark:bg-white/[0.04]">
+              <div className="rounded-2xl border border-primary/10 bg-primary/[0.045] p-4 dark:border-primary/10 dark:bg-primary/[0.08]">
                 <p className="text-sm text-slate-600 dark:text-slate-300">
                   Vista
                 </p>
@@ -60,7 +60,7 @@ export function ModulePlaceholder({
                   Base
                 </p>
               </div>
-              <div className="rounded-2xl bg-slate-50 p-4 dark:bg-white/[0.04]">
+              <div className="rounded-2xl border border-emerald-200/70 bg-emerald-50/80 p-4 dark:border-emerald-500/12 dark:bg-emerald-500/[0.07]">
                 <p className="text-sm text-slate-600 dark:text-slate-300">
                   Estado
                 </p>
@@ -68,7 +68,7 @@ export function ModulePlaceholder({
                   Lista
                 </p>
               </div>
-              <div className="rounded-2xl bg-slate-50 p-4 dark:bg-white/[0.04]">
+              <div className="rounded-2xl border border-primary/10 bg-primary/[0.045] p-4 dark:border-primary/10 dark:bg-primary/[0.08]">
                 <p className="text-sm text-slate-600 dark:text-slate-300">
                   Integración
                 </p>

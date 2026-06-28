@@ -224,7 +224,7 @@ export function SupplierForm({
       <label className="flex items-center gap-3 rounded-2xl border border-slate-200/80 bg-slate-50/80 px-4 py-3 text-sm text-slate-700 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-200">
         <input
           type="checkbox"
-          className="size-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
+          className="size-4 rounded border-slate-300 text-primary focus:ring-ring"
           {...register("is_active")}
         />
         <span>Activo</span>

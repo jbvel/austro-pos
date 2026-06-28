@@ -1,10 +1,5 @@
-import { ModulePlaceholder } from "@/components/layout/ModulePlaceholder";
+import { SettingsPage } from "@/modules/settings/components/SettingsPage";
 
-export default function SettingsPage() {
-  return (
-    <ModulePlaceholder
-      title="Configuración"
-      description="Datos del negocio, usuarios, permisos y parámetros del sistema."
-    />
-  );
+export default function Page() {
+  return <SettingsPage />;
 }

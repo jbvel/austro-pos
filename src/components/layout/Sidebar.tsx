@@ -82,11 +82,12 @@ export function Sidebar({
       }`}
     >
       <div
-        className={`flex h-full flex-col overflow-hidden rounded-[28px] border border-white/70 bg-white/95 shadow-[0_20px_60px_-36px_rgba(93,135,255,0.28)] backdrop-blur dark:border-slate-700/70 dark:bg-[color-mix(in_oklch,var(--card)_98%,#04070d)] dark:shadow-[0_12px_28px_-24px_rgba(0,0,0,0.72)] ${
+        className={`relative flex h-full flex-col overflow-hidden rounded-[28px] border border-primary/12 bg-[color-mix(in_oklch,white_92%,var(--primary)_8%)] shadow-[0_20px_60px_-36px_var(--brand-shadow-soft)] backdrop-blur dark:border-primary/12 dark:bg-[color-mix(in_oklch,var(--card)_92%,var(--primary)_8%)] dark:shadow-[0_12px_28px_-24px_rgba(0,0,0,0.72)] ${
           collapsed ? "w-20 px-2.5 py-4" : "w-64 px-4 py-5"
         }`}
       >
-        <div className="space-y-5">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-[radial-gradient(circle_at_top_left,var(--brand-gradient-start),transparent_68%)] opacity-[0.12] dark:opacity-[0.18]" />
+        <div className="relative space-y-5">
           <div
             className={`flex min-h-11 items-start ${
               collapsed ? "justify-center" : "justify-between gap-3"
@@ -97,7 +98,7 @@ export function Sidebar({
                 collapsed ? "justify-center" : "gap-3"
               }`}
             >
-              <div className="flex size-11 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#5d87ff_0%,#49beff_100%)] text-sm font-semibold text-white shadow-lg shadow-sky-200/80 dark:shadow-none dark:brightness-90">
+              <div className="flex size-11 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,var(--brand-gradient-start)_0%,var(--brand-gradient-end)_100%)] text-sm font-semibold text-[color:var(--brand-foreground)] shadow-lg shadow-[var(--brand-shadow-soft)] dark:shadow-none dark:brightness-90">
                 AP
               </div>
               {!collapsed ? (
@@ -123,7 +124,7 @@ export function Sidebar({
               type="button"
               variant="ghost"
               size="icon-sm"
-              className="rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-950 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"
+              className="rounded-xl text-slate-600 hover:bg-primary/[0.08] hover:text-slate-950 dark:text-slate-300 dark:hover:bg-primary/[0.14] dark:hover:text-white"
               aria-label={collapsed ? "Expandir sidebar" : "Colapsar sidebar"}
               onClick={onToggleCollapse}
             >
@@ -136,7 +137,7 @@ export function Sidebar({
           </div>
         </div>
 
-        <div className="my-5 h-px bg-slate-200/80 dark:bg-white/8" />
+        <div className="my-5 h-px bg-primary/10 dark:bg-primary/12" />
 
         <div className="flex-1 overflow-y-auto">
           <div
@@ -145,11 +146,11 @@ export function Sidebar({
             }`}
           >
             {!collapsed ? (
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/80 dark:text-primary/80">
                 Navegación
               </p>
             ) : null}
-            <ClipboardList className="size-4 text-slate-500 dark:text-slate-400" />
+            <ClipboardList className="size-4 text-primary/75 dark:text-primary/80" />
           </div>
 
           <nav className="space-y-1.5 pr-1">
@@ -175,11 +176,11 @@ export function Sidebar({
                 }`}
               >
                 {!collapsed ? (
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/80 dark:text-primary/80">
                     Mantenedores
                   </p>
                 ) : null}
-                <ListTree className="size-4 text-slate-500 dark:text-slate-400" />
+                <ListTree className="size-4 text-primary/75 dark:text-primary/80" />
               </div>
 
               <div className="space-y-1.5">
@@ -204,7 +205,7 @@ export function Sidebar({
         </div>
 
         <div
-          className={`mt-5 rounded-2xl border border-slate-200/80 bg-slate-100/90 dark:border-slate-700/60 dark:bg-slate-900/60 ${
+          className={`mt-5 rounded-2xl border border-primary/10 bg-primary/[0.05] dark:border-primary/10 dark:bg-primary/[0.08] ${
             collapsed ? "p-2.5" : "p-4"
           }`}
         >

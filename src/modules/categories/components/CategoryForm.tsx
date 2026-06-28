@@ -79,7 +79,7 @@ export function CategoryForm({
           <textarea
             id="category-description"
             rows={4}
-            className="min-h-28 w-full rounded-2xl border border-slate-200/80 bg-white px-3 py-2.5 text-sm text-slate-950 outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-100 dark:border-white/10 dark:bg-white/[0.04] dark:text-white dark:focus:border-sky-500 dark:focus:ring-sky-500/20"
+            className="min-h-28 w-full rounded-2xl border border-slate-200/80 bg-white px-3 py-2.5 text-sm text-slate-950 outline-none transition focus:border-ring focus:ring-2 focus:ring-ring/20 dark:border-white/10 dark:bg-white/[0.04] dark:text-white dark:focus:border-ring dark:focus:ring-ring/30"
             {...register("description")}
           />
           {errors.description ? (
@@ -93,7 +93,7 @@ export function CategoryForm({
       <label className="flex items-center gap-3 rounded-2xl border border-slate-200/80 bg-slate-50/80 px-4 py-3 text-sm text-slate-700 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-200">
         <input
           type="checkbox"
-          className="size-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
+          className="size-4 rounded border-slate-300 text-primary focus:ring-ring"
           {...register("is_active")}
         />
         <span>Activa</span>

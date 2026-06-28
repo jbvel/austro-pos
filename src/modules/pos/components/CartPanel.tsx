@@ -63,7 +63,7 @@ export function CartPanel({
     <Card className="border border-slate-200/80 bg-white/95 py-0 shadow-sm shadow-slate-200/45 dark:border-white/8 dark:bg-[color-mix(in_oklch,var(--card)_90%,#0c1421)] dark:shadow-[0_18px_36px_-28px_rgba(0,0,0,0.7)]">
       <CardHeader className="border-b border-slate-200/70 px-5 py-5 dark:border-white/8">
         <div className="flex items-center gap-3">
-          <div className="flex size-10 items-center justify-center rounded-2xl bg-sky-50 text-sky-700 dark:bg-sky-500/10 dark:text-sky-300">
+          <div className="flex size-10 items-center justify-center rounded-2xl bg-primary/[0.1] text-primary dark:bg-primary/[0.14] dark:text-primary">
             <ReceiptText className="size-5" />
           </div>
           <div>
@@ -140,7 +140,7 @@ export function CartPanel({
           </div>
 
           {paymentMethod === "cash" ? (
-            <div className="space-y-3 rounded-2xl border border-sky-100/80 bg-white/80 p-3 dark:border-sky-400/12 dark:bg-sky-500/[0.05]">
+            <div className="space-y-3 rounded-2xl border border-primary/12 bg-white/80 p-3 dark:border-primary/12 dark:bg-primary/[0.06]">
               <div className="space-y-2">
                 <Label
                   htmlFor="pos-cash-received"
@@ -196,7 +196,7 @@ export function CartPanel({
               {formatCLP(discount)}
             </span>
           </div>
-          <div className="flex items-center justify-between rounded-2xl border border-sky-100/70 bg-sky-50/70 px-3 py-3 text-base font-semibold text-slate-950 dark:border-sky-400/12 dark:bg-sky-500/[0.08] dark:text-white">
+          <div className="flex items-center justify-between rounded-2xl border border-primary/12 bg-primary/[0.08] px-3 py-3 text-base font-semibold text-slate-950 dark:border-primary/12 dark:bg-primary/[0.1] dark:text-white">
             <span>Total</span>
             <span>{formatCLP(total)}</span>
           </div>

@@ -35,7 +35,7 @@ export default function DashboardPage() {
         action={
           <Button
             variant="secondary"
-            className="bg-white text-sky-700 hover:bg-sky-50 dark:bg-white/8 dark:text-white/90 dark:hover:bg-white/14"
+            className="bg-white text-primary hover:bg-primary/8 dark:bg-white/8 dark:text-white/90 dark:hover:bg-white/14"
           >
             Sistema activo
           </Button>
@@ -43,9 +43,9 @@ export default function DashboardPage() {
       />
 
       <section className="grid gap-4 xl:grid-cols-[1.65fr_1fr]">
-        <Card className="border border-sky-100/70 bg-white/95 shadow-sm shadow-sky-100/60 dark:border-sky-400/12 dark:bg-[color-mix(in_oklch,var(--card)_90%,#0b1220)] dark:shadow-[0_10px_26px_-18px_rgba(0,0,0,0.6)]">
+        <Card className="border border-primary/12 bg-white/95 shadow-sm shadow-[0_10px_24px_-18px_var(--brand-shadow-soft)] dark:border-primary/12 dark:bg-[color-mix(in_oklch,var(--card)_90%,#0b1220)] dark:shadow-[0_10px_26px_-18px_rgba(0,0,0,0.6)]">
           <CardHeader className="space-y-2">
-            <CardDescription className="text-sm uppercase tracking-[0.16em] text-sky-700 dark:text-sky-300/85">
+            <CardDescription className="text-sm uppercase tracking-[0.16em] text-primary/90 dark:text-primary/85">
               OPERACIÓN
             </CardDescription>
             <CardTitle className="text-2xl font-semibold tracking-tight text-slate-950 dark:text-white">
@@ -53,17 +53,17 @@ export default function DashboardPage() {
             </CardTitle>
           </CardHeader>
           <CardContent className="grid gap-4 md:grid-cols-3">
-            <div className="rounded-2xl bg-slate-50 p-4 dark:bg-white/[0.04]">
+            <div className="rounded-2xl border border-primary/10 bg-primary/[0.045] p-4 dark:border-primary/10 dark:bg-primary/[0.08]">
               <p className="text-sm text-slate-600 dark:text-slate-300">Sesiones listas</p>
               <p className="mt-2 text-2xl font-semibold text-slate-950 dark:text-white">1</p>
             </div>
-            <div className="rounded-2xl bg-slate-50 p-4 dark:bg-white/[0.04]">
+            <div className="rounded-2xl border border-emerald-200/70 bg-emerald-50/80 p-4 dark:border-emerald-500/12 dark:bg-emerald-500/[0.07]">
               <p className="text-sm text-slate-600 dark:text-slate-300">Estado del sistema</p>
               <p className="mt-2 text-2xl font-semibold text-emerald-600">
                 OK
               </p>
             </div>
-            <div className="rounded-2xl bg-slate-50 p-4 dark:bg-white/[0.04]">
+            <div className="rounded-2xl border border-primary/10 bg-primary/[0.045] p-4 dark:border-primary/10 dark:bg-primary/[0.08]">
               <p className="text-sm text-slate-600 dark:text-slate-300">Modo</p>
               <p className="mt-2 text-2xl font-semibold text-slate-950 dark:text-white">
                 Mock
@@ -91,16 +91,24 @@ export default function DashboardPage() {
       </section>
 
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {dashboardCards.map((card) => (
+        {dashboardCards.map((card, index) => (
           <Card
             key={card.title}
-            className="border border-slate-200/80 bg-white/95 shadow-sm shadow-slate-200/50 dark:border-slate-700/70 dark:bg-slate-900/72 dark:shadow-[0_10px_22px_-18px_rgba(0,0,0,0.62)]"
+            className={`border bg-white/95 shadow-sm dark:bg-slate-900/72 dark:shadow-[0_10px_22px_-18px_rgba(0,0,0,0.62)] ${
+              index === 2
+                ? "border-amber-200/80 shadow-amber-100/45 dark:border-amber-500/18"
+                : "border-primary/12 shadow-[0_10px_24px_-18px_var(--brand-shadow-soft)] dark:border-primary/12"
+            }`}
           >
             <CardHeader className="space-y-1">
               <CardDescription className="text-sm text-slate-600 dark:text-slate-300">
                 {card.title}
               </CardDescription>
-              <CardTitle className="text-3xl font-semibold tracking-tight text-slate-950 dark:text-white">
+              <CardTitle
+                className={`text-3xl font-semibold tracking-tight dark:text-white ${
+                  index === 2 ? "text-amber-700 dark:text-amber-300" : "text-slate-950"
+                }`}
+              >
                 {card.value}
               </CardTitle>
             </CardHeader>

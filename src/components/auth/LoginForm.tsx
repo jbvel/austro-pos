@@ -52,9 +52,9 @@ export function LoginForm() {
   });
 
   return (
-    <Card className="w-full max-w-md border border-sky-100/80 bg-white/95 shadow-[0_24px_64px_-32px_rgba(86,100,210,0.35)] backdrop-blur dark:border-white/10 dark:bg-[color-mix(in_oklch,var(--card)_94%,black)] dark:shadow-[0_24px_64px_-32px_rgba(0,0,0,0.72)]">
+    <Card className="w-full max-w-md border border-primary/12 bg-white/95 shadow-[0_24px_64px_-32px_var(--brand-shadow-soft)] backdrop-blur dark:border-white/10 dark:bg-[color-mix(in_oklch,var(--card)_94%,black)] dark:shadow-[0_24px_64px_-32px_rgba(0,0,0,0.72)]">
       <CardHeader className="space-y-3 text-center">
-        <div className="mx-auto flex size-12 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#5d87ff_0%,#49beff_100%)] text-lg font-semibold text-white shadow-lg shadow-sky-200/80">
+        <div className="mx-auto flex size-12 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,var(--brand-gradient-start)_0%,var(--brand-gradient-end)_100%)] text-lg font-semibold text-[color:var(--brand-foreground)] shadow-lg shadow-[var(--brand-shadow-soft)]">
           AP
         </div>
         <CardTitle className="text-3xl font-semibold tracking-tight text-slate-950 dark:text-white">
@@ -110,7 +110,7 @@ export function LoginForm() {
           ) : null}
 
           <Button
-            className="h-11 w-full bg-[linear-gradient(135deg,#5d87ff_0%,#4570f5_100%)] text-white hover:opacity-95"
+            className="h-11 w-full bg-[linear-gradient(135deg,var(--brand-gradient-start)_0%,var(--brand-gradient-end)_100%)] text-[color:var(--brand-foreground)] hover:opacity-95"
             type="submit"
             disabled={isSubmitting}
           >

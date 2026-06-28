@@ -9,15 +9,15 @@ type HeaderProps = {
 
 export function Header({ badge, title, description, action }: HeaderProps) {
   return (
-    <header className="flex flex-col gap-6 rounded-[28px] border border-sky-100/80 bg-[linear-gradient(135deg,#5d87ff_0%,#49beff_100%)] p-6 text-white shadow-[0_24px_64px_-28px_rgba(73,190,255,0.55)] dark:border-sky-400/15 dark:bg-[linear-gradient(135deg,#2d4ba6_0%,#255c86_100%)] dark:shadow-[0_18px_42px_-24px_rgba(0,0,0,0.55)] sm:flex-row sm:items-start sm:justify-between sm:p-7">
+    <header className="flex flex-col gap-6 rounded-[28px] border border-[color:var(--brand-border)] bg-[linear-gradient(135deg,var(--brand-gradient-start)_0%,var(--brand-gradient-end)_100%)] p-6 text-[color:var(--brand-foreground)] shadow-[0_24px_64px_-28px_var(--brand-shadow)] dark:border-[color:var(--brand-border-dark)] dark:bg-[linear-gradient(135deg,var(--brand-gradient-dark-start)_0%,var(--brand-gradient-dark-end)_100%)] dark:shadow-[0_18px_42px_-24px_rgba(0,0,0,0.55)] sm:flex-row sm:items-start sm:justify-between sm:p-7">
       <div className="space-y-3">
         {badge ? (
-          <span className="inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white/90 dark:bg-white/10 dark:text-white/80">
+          <span className="inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--brand-foreground-muted)] dark:bg-white/10">
             {badge}
           </span>
         ) : null}
         <h1 className="text-3xl font-semibold tracking-tight">{title}</h1>
-        <p className="max-w-xl text-sm leading-6 text-white/80 dark:text-white/72">
+        <p className="max-w-xl text-sm leading-6 text-[color:var(--brand-foreground-soft)]">
           {description}
         </p>
       </div>

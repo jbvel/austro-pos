@@ -10,7 +10,7 @@ export function AuthLayout({ children }: AuthLayoutProps) {
       <div className="mx-auto grid min-h-screen w-full max-w-7xl items-center gap-10 px-6 py-16 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:px-12">
         <section className="hidden max-w-2xl lg:block">
           <div className="space-y-6">
-            <span className="inline-flex rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-sky-700 dark:border-sky-400/20 dark:bg-sky-400/10 dark:text-sky-200">
+            <span className="inline-flex rounded-full border border-primary/18 bg-primary/[0.08] px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-primary dark:border-primary/20 dark:bg-primary/10 dark:text-primary">
               Austro POS
             </span>
             <div className="space-y-4">
@@ -23,15 +23,15 @@ export function AuthLayout({ children }: AuthLayoutProps) {
               </p>
             </div>
             <div className="grid max-w-xl grid-cols-3 gap-4">
-              <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm shadow-sky-100/60 dark:border-white/10 dark:bg-white/5 dark:shadow-none">
+              <div className="rounded-2xl border border-primary/12 bg-white/80 p-4 shadow-sm shadow-[0_10px_20px_-18px_var(--brand-shadow-soft)] dark:border-white/10 dark:bg-white/5 dark:shadow-none">
                 <p className="text-sm text-slate-600 dark:text-slate-300">Ventas</p>
                 <p className="mt-2 text-2xl font-semibold text-slate-950 dark:text-white">$0</p>
               </div>
-              <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm shadow-sky-100/60 dark:border-white/10 dark:bg-white/5 dark:shadow-none">
+              <div className="rounded-2xl border border-primary/12 bg-white/80 p-4 shadow-sm shadow-[0_10px_20px_-18px_var(--brand-shadow-soft)] dark:border-white/10 dark:bg-white/5 dark:shadow-none">
                 <p className="text-sm text-slate-600 dark:text-slate-300">Caja</p>
                 <p className="mt-2 text-2xl font-semibold text-slate-950 dark:text-white">$0</p>
               </div>
-              <div className="rounded-2xl border border-white/70 bg-white/80 p-4 shadow-sm shadow-sky-100/60 dark:border-white/10 dark:bg-white/5 dark:shadow-none">
+              <div className="rounded-2xl border border-amber-200/70 bg-white/80 p-4 shadow-sm shadow-[0_10px_20px_-18px_var(--brand-shadow-soft)] dark:border-amber-500/18 dark:bg-white/5 dark:shadow-none">
                 <p className="text-sm text-slate-600 dark:text-slate-300">Stock critico</p>
                 <p className="mt-2 text-2xl font-semibold text-slate-950 dark:text-white">0</p>
               </div>

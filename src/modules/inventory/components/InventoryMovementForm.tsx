@@ -197,7 +197,7 @@ export function InventoryMovementForm({
           <textarea
             id="movement-reason"
             rows={3}
-            className="flex min-h-[96px] w-full rounded-2xl border border-slate-200/80 bg-white px-3 py-2 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus-visible:border-sky-400 focus-visible:ring-2 focus-visible:ring-sky-200/70 dark:border-white/10 dark:bg-white/[0.04] dark:text-white dark:placeholder:text-slate-500 dark:focus-visible:border-sky-400 dark:focus-visible:ring-sky-400/20"
+            className="flex min-h-[96px] w-full rounded-2xl border border-slate-200/80 bg-white px-3 py-2 text-sm text-slate-950 outline-none transition placeholder:text-slate-400 focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/20 dark:border-white/10 dark:bg-white/[0.04] dark:text-white dark:placeholder:text-slate-500 dark:focus-visible:border-ring dark:focus-visible:ring-ring/30"
             {...register("reason")}
           />
           {errors.reason ? (

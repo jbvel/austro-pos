@@ -51,8 +51,8 @@ export function NavItem({
       onClick={onClick}
       className={`flex rounded-2xl px-3 py-3 text-sm font-medium transition-colors ${
         isActive
-          ? "bg-[linear-gradient(135deg,#5d87ff_0%,#49beff_100%)] text-white shadow-lg shadow-sky-200/80 dark:shadow-none dark:brightness-95"
-          : "text-slate-700 hover:bg-slate-100 hover:text-slate-950 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"
+          ? "bg-[linear-gradient(135deg,var(--brand-gradient-start)_0%,var(--brand-gradient-end)_100%)] text-[color:var(--brand-foreground)] shadow-lg shadow-[var(--brand-shadow-soft)] dark:shadow-none dark:brightness-95"
+          : "text-slate-700 hover:bg-primary/[0.08] hover:text-slate-950 dark:text-slate-300 dark:hover:bg-primary/[0.14] dark:hover:text-white"
       } ${collapsed ? "justify-center" : "items-center gap-3"}`}
       title={label}
     >

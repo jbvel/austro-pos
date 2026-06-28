@@ -306,7 +306,7 @@ export function DataTable<TData>({
                             type="checkbox"
                             checked={visibleColumns.includes(columnKey)}
                             onChange={() => handleToggleColumn(columnKey)}
-                            className="size-4 rounded border-slate-300 text-sky-600 focus:ring-sky-500"
+                            className="size-4 rounded border-slate-300 text-primary focus:ring-ring"
                           />
                           <span>{column.header}</span>
                         </label>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, IBM_Plex_Mono } from "next/font/google";
+import { PaletteProvider } from "@/components/palette-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -41,16 +42,18 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
-          <TooltipProvider>
-            {children}
-            <Toaster
-              position="bottom-right"
-              expand={false}
-              richColors
-              closeButton
-              visibleToasts={4}
-            />
-          </TooltipProvider>
+          <PaletteProvider>
+            <TooltipProvider>
+              {children}
+              <Toaster
+                position="bottom-right"
+                expand={false}
+                richColors
+                closeButton
+                visibleToasts={4}
+              />
+            </TooltipProvider>
+          </PaletteProvider>
         </ThemeProvider>
       </body>
     </html>
