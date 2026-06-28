@@ -17,8 +17,12 @@ src/modules/
 ├── pos/
 ├── suppliers/
 ├── products/
+├── purchases/
 ├── sales/
-├── inventory/
+├── stock/
+├── movements/
+├── adjustments/
+├── shrinkage/
 ├── customers/
 ├── cash-register/
 ├── reports/
@@ -201,7 +205,10 @@ Aplicará para:
 
 - Productos
 - Ventas
-- Inventario
+- Stock
+- Movimientos
+- Ajustes
+- Mermas
 - Clientes
 - Caja
 - Reportes
@@ -265,9 +272,12 @@ Gestión:
 
 Operación:
 
-- Ventas
 - Compras
-- Inventario
+- Ventas
+- Stock
+- Movimientos
+- Ajustes
+- Mermas
 - Caja
 
 Mantenedores:

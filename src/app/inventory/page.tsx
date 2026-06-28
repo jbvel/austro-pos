@@ -1,10 +1,5 @@
-import { ModulePlaceholder } from "@/components/layout/ModulePlaceholder";
+import { InventoryPage } from "@/modules/inventory/components/InventoryPage";
 
-export default function InventoryPage() {
-  return (
-    <ModulePlaceholder
-      title="Inventario"
-      description="Control de stock, movimientos y ajustes."
-    />
-  );
+export default function Page() {
+  return <InventoryPage />;
 }

@@ -64,8 +64,13 @@ Menú:
 - Dashboard
 - POS
 - Productos
+- Compras
 - Ventas
-- Inventario
+- Stock
+- Movimientos
+- Ajustes
+- Mermas
+- Proveedores
 - Clientes
 - Caja
 - Reportes
@@ -149,9 +154,12 @@ Gestión:
 - Proveedores
 
 Operación:
-- Ventas
 - Compras
-- Inventario
+- Ventas
+- Stock
+- Movimientos
+- Ajustes
+- Mermas
 - Caja
 
 Mantenedores:
@@ -258,6 +266,12 @@ El POS mock incluye:
 - cálculo de vuelto para efectivo
 - formato CLP
 - finalización de venta mock
+
+Arquitectura operativa de inventario definida:
+- `Stock`: existencia actual por producto
+- `Movimientos`: historial de entradas y salidas
+- `Ajustes`: correcciones manuales
+- `Mermas`: pérdidas, roturas y vencimientos
 - limpieza del carrito al finalizar
 
 El stock no se descuenta de forma persistente porque aún no existe backend, base de datos ni productos reales.
